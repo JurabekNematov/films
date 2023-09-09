@@ -1,5 +1,5 @@
 var elFilmsList = document.querySelector(".films-list");
-
+var filmsFragment = document.createDocumentFragment();
 for (const film of films) {
 
   // Creating features of films
@@ -41,10 +41,11 @@ for (const film of films) {
 
 
   elFilmItem.append(elFilmTitile, elFilmPic, elFilmOverview, elFilmYear, elFilmGenre, elFilmGenreList);
-  elFilmsList.appendChild(elFilmItem);
+  filmsFragment.appendChild(elFilmItem);
 
   // Styling
   elFilmTitile.classList.add("fs-5", "films-overview")
   elFilmItem.classList.add("films-item");
   elFilmPic.classList.add("films-pic");
 }
+elFilmsList.appendChild(filmsFragment);
